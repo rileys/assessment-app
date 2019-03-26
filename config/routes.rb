@@ -5,5 +5,11 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :teams do
+    resources :players, only: :index
+  end
+
+  resources :players
+
   root 'conferences#show'
 end
